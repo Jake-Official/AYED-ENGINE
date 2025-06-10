@@ -10,6 +10,8 @@
   background-position: center;
   image-orientation: flip;
   text-align: center;
+  width: 100px;
+  height: 100px;
 }
 .embedShit {
     width: 300px;
