@@ -8,10 +8,12 @@
 }
 .imgShit {
   background-position: center;
-  image-orientation: flip;
   text-align: center;
-  width: 100px;
-  height: 100px;
+  text-transform: uppercase;
+  dominant-baseline: auto;
+  display: flex;
+  justify-content: center;
+  margin: 150px;
 }
 .embedShit {
     width: 300px;
