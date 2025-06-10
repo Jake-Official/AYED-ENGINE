@@ -1,0 +1,198 @@
+.hero-spot {
+    table-layout: auto;
+    background-position-x: center;
+    padding: 90px;
+    background: #1d68ff;
+    border: 2px solid #dddddd;
+    border-radius: 40px;
+}
+.embedShit {
+    width: 300px;
+    top: 50px;
+    x: calc(200px, 0, 0);
+}
+#textPDes {
+  background-position-x: center;
+  padding: 90px;
+  text-align: center;
+}
+.embedShitGithub {
+  outline: 2.5px solid rgb(61, 61, 61);
+  background-position-x: center;
+  width: 350px;
+  top: 150px;
+  x: calc(1000px, 550, 550);
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}
+.justtextforh3 {
+
+}
+#imgCd {
+  margin: 0 auto;
+  display:flex;
+  justify-content: center;
+  y: calc(-20px 0 0);
+}
+.hsg-footer__contact-links.social-cl .hsg-footer__social {
+  display: flex;
+  justify-content: center;
+}
+div.contentShitty {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.textShitty {
+  color: #b10000;
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  border-radius: px;
+  background-color: #ff00001f;
+  padding: 10px;
+  border-left: 5px solid #ff0000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-spacing: 20px;
+  outline: 1px solid rgb(255, 0, 0);
+  justify-content: center;
+  dominant-baseline: auto;
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+.hsg-footer__contact-links:after,.hsg-footer__contact-links:before {
+  border-top:1px solid #7691ad;
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 33%
+}
+hr {
+  color: #007bff;
+  border-radius: 50px;
+}
+.h4Shitty {
+  size: 20px;
+  font-size: 20px;
+  background-color: yellow;
+  padding: 5px;
+  border-radius: 50px;
+}
+.someItext {
+  text-align: center;
+  text-shadow: blue;
+  font-size: 20px;
+  border-radius: 100px;
+  background-color: #4502ff1f;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.textShittyAnother {
+  background-position-x: center;
+  background-position: 100px;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  border-radius: 8px;
+  background-color: #c300ff1f;
+  border-top-width: 400px;
+  box-sizing: auto;
+  padding: 10px;
+  border-left: 5px solid #4400ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  x: calc(200px, 0, 0);
+  outline: 1px solid blue;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+.anotherTextForTab {
+    text-align: right;
+    margin-left: 550px;
+    cursor:pointer;
+    height: 50px;
+    color: #222;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0);
+    border: 100px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    background-color: #4400ff5b;
+}
+body{
+    margin: auto;
+    background-image: url(data/velocityBG.png);
+    font-family: Arial, sans-serif;
+    line-height: 3;
+    padding: 20%;
+    display:block;
+    width:fit-content;
+    widows: calc(200px);
+    margin: 0 auto;
+    scrollbar-color: #FFFFFF;
+}
+  .container {
+    max-width: auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 60px;
+    box-shadow: 0 0 10px rgb(40, 0, 141);
+  }
+  ​
+  .content {
+    margin-top: 10px;
+    padding: 10px;
+  }
+#logoShit {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+h2.textNews {
+  background-color: rgb(55, 0, 255);
+  padding: 5px;
+  border-radius: 100px;
+  background-position-x: center;
+  text-decoration: dashed;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.tfinworld-bgcolor {
+  border-image: repeat;
+}
+section.hero-spot-two{
+    padding: 40px 0 0;
+    position: relative;
+    background: #ffffff;
+    width: 40px 0 0;
+    height: 600px;
+    table-layout: auto;
+}
+h1.engineShit-h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-position-x:center;
+    overscroll-behavior-x: 200px;
+    text-decoration-skip-ink: all;
+    text-align: center;
+    text-align-last: auto;
+}
+a.help-link {
+    color: rgb(25, 117, 255);
+    background-blend-mode: color;
+    background-origin: border-box;
+}
+.lastTextS {
+  color: rgb(75, 234, 255);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.lastTextSH {
+  color: rgb(138, 75, 255);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
