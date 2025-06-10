@@ -6,6 +6,11 @@
     border: 2px solid #dddddd;
     border-radius: 40px;
 }
+.imgShit {
+  background-position: center;
+  image-orientation: flip;
+  text-align: center;
+}
 .embedShit {
     width: 300px;
     top: 50px;
