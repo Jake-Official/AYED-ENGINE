@@ -231,3 +231,32 @@ function lazyLoadImages() {
 }
 
 document.addEventListener('DOMContentLoaded', lazyLoadImages);
+
+function startCountdown() {
+    const timerDiv = document.querySelector('.countdown-timer');
+    if (!timerDiv) return;
+    
+    function updateCountdown() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const target = new Date(year, 6, 18, 0, 0, 0);
+        if (now > target) return;
+        const diff = target - now;
+        
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        
+        timerDiv.innerHTML = `
+            <span>${String(days).padStart(2, '0')}</span> days :
+            <span>${String(hours).padStart(2, '0')}</span> hours :
+            <span>${String(minutes).padStart(2, '0')}</span> minutes :
+            <span>${String(seconds).padStart(2, '0')}</span> seconds
+        `;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', startCountdown);

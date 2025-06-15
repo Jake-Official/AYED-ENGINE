@@ -391,3 +391,29 @@ body {
     outline: 2px solid #4ecdc4;
     outline-offset: 2px;
 }
+
+.countdown-timer {
+    margin: 30px auto 0 auto;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: #4ecdc4;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 18px 0;
+    max-width: 400px;
+    box-shadow: 0 2px 12px rgba(78,205,196,0.08);
+    border: 1.5px solid #4ecdc4;
+    transition: background 0.3s;
+}
+
+.countdown-timer span {
+    color: #fff;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 8px;
+    font-variant-numeric: tabular-nums;
+}
