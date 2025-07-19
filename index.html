@@ -9,9 +9,22 @@
     <meta name="og:description" content="AYED ENGINE - A Friday Night Funkin' mod engine in development">
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/x-icon" href="./data/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="./script.js" defer></script>
 </head>
 <body>
+    <div class="mini-player">
+        <div class="mini-player-controls">
+            <button class="mini-player-button" id="playPauseBtn">
+                <i class="fas fa-play" id="playPauseIcon"></i>
+            </button>
+            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="30">
+        </div>
+        <div class="mini-player-info">
+            <p class="mini-player-title">AYED ENGINE</p>
+            <p class="mini-player-artist">Credits Music</p>
+        </div>
+    </div>
     <div class="content-wrapper">
         <header class="hero-section">
             <div class="logo-container">
@@ -21,9 +34,6 @@
             </div>
             
             <nav class="navigation">
-                <button class="nav-button" onclick="showAlert('Merch AYED ENGINE is Coming Soon On Version 2.5 - V3 or Version 3F')">
-                    Merch Page ▸
-                </button>
                 <button class="nav-button" onclick="showAlert('We Apologize That Website Hasnt Have Help Page But You Can Visit The Discord Server To See The Help Page')">
                     Help Page ▸
                 </button>
@@ -33,7 +43,7 @@
         <main class="main-content">
             <section class="coming-soon-section">
                 <div class="container">
-                    <h1 class="coming-soon-title">COMING SOON . . .</h1>
+                    <h1 class="coming-soon-title">DEMO OUT NOW!</h1>
                     <div class="face-image-container">
                         <img src="data/face not idea.png" alt="AYED ENGINE Face" class="face-image">
                     </div>
@@ -63,11 +73,6 @@
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/o5J4fG1qvjg?si=5PJWDGHozAl2V-yT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                         </blockquote>
-                       <blockquote>
-                            <div class="face-image-container">
-                            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/6PvfJJou8P2nnDeDs26BWU?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                            </div>
-                        </blockquote>
                         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
                 </div>
@@ -86,6 +91,20 @@
                             <span class="progress-text">In Progress . . . 50%</span>
                         </div>
                         <div class="countdown-timer"></div>
+                        <div class="platform-icons">
+                            <a href="https://gamebanana.com/mods/607886" target="_blank" rel="noopener noreferrer" class="platform-button">
+                                <img src="data/gb-icon-256x256.png" alt="GameBanana" class="platform-icon">
+                            </a>
+                            <a href="https://gamejolt.com/games/ayed_engine/1007149" target="_blank" rel="noopener noreferrer" class="platform-button" onclick="showAlert('We Apologize That Website Hasnt Have Gamejolt Page But You Can Visit The Discord Server To See The Gamejolt Page')">
+                                <img src="data/gj-icon-512x512.png" alt="GameJolt" class="platform-icon">
+                            </a>
+                            <a href="https://open.spotify.com/album/6PvfJJou8P2nnDeDs26BWU" target="_blank" rel="noopener noreferrer" class="platform-button">
+                                <img src="data/spotify-icon-939-940.png" alt="Spotify" class="platform-icon">
+                            </a>
+                            <a href="https://discord.gg/Fe8fdm4dse" target="_blank" rel="noopener noreferrer" class="platform-button">
+                                <img src="data/discord-icon.png" alt="Discord" class="platform-icon">
+                            </a>
+                        </div>
                     </div>
 
                     <div class="source-code-section">

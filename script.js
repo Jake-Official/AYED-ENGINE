@@ -8,20 +8,41 @@ function initializeWebsite() {
     addSmoothScrolling();    
     addLoadingAnimations();    
     initializeInteractiveElements();
+    initializeDraggablePlayer();
 }
 
 function initializeBackgroundMusic() {
     const audio = document.getElementById('backgroundMusic');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playPauseIcon = document.getElementById('playPauseIcon');
+    const volumeSlider = document.getElementById('volumeSlider');
     
     if (audio) {
-        audio.volume = 0.3;        
-        document.addEventListener('click', function() {
+        audio.volume = 0.3;
+        
+        playPauseBtn.addEventListener('click', function() {
             if (audio.paused) {
                 audio.play().catch(function(error) {
                     console.log('Audio play failed:', error);
                 });
+                playPauseIcon.classList.replace('fa-play', 'fa-pause');
+            } else {
+                audio.pause();
+                playPauseIcon.classList.replace('fa-pause', 'fa-play');
             }
-        }, { once: true });
+        });
+
+        volumeSlider.addEventListener('input', function() {
+            audio.volume = this.value / 100;
+        });
+
+        audio.addEventListener('play', function() {
+            playPauseIcon.classList.replace('fa-play', 'fa-pause');
+        });
+
+        audio.addEventListener('pause', function() {
+            playPauseIcon.classList.replace('fa-pause', 'fa-play');
+        });
     }
 }
 
@@ -194,11 +215,14 @@ document.addEventListener('keydown', function(e) {
     if (e.code === 'Space' && e.target === document.body) {
         e.preventDefault();
         const audio = document.getElementById('backgroundMusic');
+        const playPauseIcon = document.getElementById('playPauseIcon');
         if (audio) {
             if (audio.paused) {
                 audio.play();
+                playPauseIcon.classList.replace('fa-play', 'fa-pause');
             } else {
                 audio.pause();
+                playPauseIcon.classList.replace('fa-pause', 'fa-play');
             }
         }
     }
@@ -240,8 +264,17 @@ function startCountdown() {
         const now = new Date();
         const year = now.getFullYear();
         const target = new Date(year, 6, 18, 0, 0, 0);
-        if (now > target) return;
+        
         const diff = target - now;
+        
+        if (diff <= 0) {
+            timerDiv.innerHTML = '<span>DOWNLOAD AND STREAM NOW!</span>';
+            const platformIcons = document.querySelector('.platform-icons');
+            if (platformIcons) {
+                platformIcons.classList.add('show');
+            }
+            return;
+        }
         
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
@@ -260,3 +293,96 @@ function startCountdown() {
 }
 
 document.addEventListener('DOMContentLoaded', startCountdown);
+
+function initializeDraggablePlayer() {
+    const miniPlayer = document.querySelector('.mini-player');
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+    let xOffset = 0;
+    let yOffset = 0;
+
+    function savePosition() {
+        localStorage.setItem('miniPlayerPosition', JSON.stringify({
+            x: xOffset,
+            y: yOffset
+        }));
+    }
+
+    function loadPosition() {
+        const savedPosition = localStorage.getItem('miniPlayerPosition');
+        if (savedPosition) {
+            const pos = JSON.parse(savedPosition);
+            xOffset = pos.x;
+            yOffset = pos.y;
+            setTranslate(xOffset, yOffset, miniPlayer);
+        }
+    }
+
+    function dragStart(e) {
+        if (e.target.closest('.mini-player-controls') || e.target.closest('.mini-player-button')) {
+            return;
+        }
+
+        if (e.type === "touchstart") {
+            initialX = e.touches[0].clientX - xOffset;
+            initialY = e.touches[0].clientY - yOffset;
+        } else {
+            initialX = e.clientX - xOffset;
+            initialY = e.clientY - yOffset;
+        }
+
+        isDragging = true;
+        miniPlayer.classList.add('dragging');
+    }
+
+    function dragEnd(e) {
+        if (!isDragging) return;
+        
+        initialX = currentX;
+        initialY = currentY;
+        isDragging = false;
+        miniPlayer.classList.remove('dragging');
+        savePosition();
+    }
+
+    function drag(e) {
+        if (!isDragging) return;
+
+        e.preventDefault();
+
+        if (e.type === "touchmove") {
+            currentX = e.touches[0].clientX - initialX;
+            currentY = e.touches[0].clientY - initialY;
+        } else {
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
+        }
+
+        xOffset = currentX;
+        yOffset = currentY;
+
+        setTranslate(xOffset, yOffset, miniPlayer);
+    }
+
+    function setTranslate(xPos, yPos, el) {
+        el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+    }
+
+    miniPlayer.addEventListener('mousedown', dragStart);
+    window.addEventListener('mousemove', drag);
+    window.addEventListener('mouseup', dragEnd);
+
+    miniPlayer.addEventListener('touchstart', dragStart);
+    window.addEventListener('touchmove', drag);
+    window.addEventListener('touchend', dragEnd);
+
+    loadPosition();
+
+    window.addEventListener('resize', () => {
+        setTranslate(xOffset, yOffset, miniPlayer);
+        savePosition();
+    });
+}
