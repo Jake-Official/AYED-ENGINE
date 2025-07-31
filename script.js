@@ -202,7 +202,7 @@ function animateProgressBar() {
     const progressFill = document.querySelector('.progress-fill');
     if (progressFill) {
         setTimeout(() => {
-            progressFill.style.width = '50%';
+            progressFill.style.width = '100%';
         }, 1000);
     }
 }
